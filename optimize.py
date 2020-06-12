@@ -3,13 +3,13 @@ import numpy as np
 
 from multiprocessing import Pool
 
-from lib.env.reward import WeightedUnrealizedProfit
+from martin.lib.env.reward import WeightedUnrealizedProfit
 
 np.warnings.filterwarnings('ignore')
 
 
 def optimize_code(params):
-    from lib.RLTrader import RLTrader
+    from martin.lib.RLTrader import RLTrader
 
     trader = RLTrader(**params)
     trader.optimize()
@@ -26,7 +26,7 @@ if __name__ == '__main__':
 
     print([result.get() for result in results])
 
-    from lib.RLTrader import RLTrader
+    from martin.lib.RLTrader import RLTrader
 
     trader = RLTrader(**params)
     trader.train(test_trained_model=True, render_test_env=True, render_report=True, save_report=True)

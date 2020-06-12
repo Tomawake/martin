@@ -2,7 +2,7 @@ import numpy as np
 
 from typing import Tuple, Callable
 
-from lib.env.trade import BaseTradeStrategy
+from martin.lib.env.trade import BaseTradeStrategy
 
 
 class SimulatedTradeStrategy(BaseTradeStrategy):

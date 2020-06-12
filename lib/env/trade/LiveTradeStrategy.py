@@ -1,7 +1,7 @@
 from typing import Tuple, Callable
 from enum import Enum
 
-from lib.env.trade import BaseTradeStrategy
+from martin.lib.env.trade import BaseTradeStrategy
 
 
 class LiveTradeStrategy(BaseTradeStrategy):

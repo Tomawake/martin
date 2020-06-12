@@ -1,8 +1,8 @@
 from unittest import mock
 from unittest.mock import MagicMock
 
-from lib.RLTrader import RLTrader
-from lib.cli.RLTraderCLI import RLTraderCLI
+from martin.lib.RLTrader import RLTrader
+from martin.lib.cli.RLTraderCLI import RLTraderCLI
 
 
 class TestRLTrader():
@@ -16,7 +16,7 @@ class TestRLTrader():
         args = self.parser.parse_args(['optimize'])
         sut = RLTrader(**vars(args), logger=MagicMock())
         sut.study_name = 'test'
-        with mock.patch('lib.util.logger.init_logger'):
+        with mock.patch('martin.lib.util.logger.init_logger'):
             assert(sut.tensorboard_path == args.tensorboard_path)
             assert(sut.params_db_path == args.params_db_path)
             assert(sut.model_verbose == args.model_verbose)

@@ -2,10 +2,10 @@ import numpy as np
 
 from multiprocessing import Process
 
-from lib.cli.RLTraderCLI import RLTraderCLI
-from lib.util.logger import init_logger
-from lib.cli.functions import download_data_async
-from lib.env.reward import BaseRewardStrategy, IncrementalProfit, WeightedUnrealizedProfit
+from martin.lib.cli.RLTraderCLI import RLTraderCLI
+from martin.lib.util.logger import init_logger
+from martin.lib.cli.functions import download_data_async
+from martin.lib.env.reward import BaseRewardStrategy, IncrementalProfit, WeightedUnrealizedProfit
 
 np.warnings.filterwarnings('ignore')
 
@@ -17,7 +17,7 @@ reward_strategy = rewards[args.reward_strat]
 
 
 def run_optimize(args, logger):
-    from lib.RLTrader import RLTrader
+    from martin.lib.RLTrader import RLTrader
 
     trader = RLTrader(**vars(args), logger=logger, reward_strategy=reward_strategy)
     trader.optimize(n_trials=args.trials)
@@ -39,7 +39,7 @@ if __name__ == '__main__':
         for proc in processes:
             proc.join()
 
-    from lib.RLTrader import RLTrader
+    from martin.lib.RLTrader import RLTrader
 
     trader = RLTrader(**vars(args), logger=logger, reward_strategy=reward_strategy)
 

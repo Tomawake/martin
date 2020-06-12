@@ -4,8 +4,8 @@ import pandas as pd
 from typing import Tuple
 from datetime import datetime
 
-from lib.data.providers.dates import ProviderDateFormat
-from lib.data.providers import BaseDataProvider
+from martin.lib.data.providers.dates import ProviderDateFormat
+from martin.lib.data.providers import BaseDataProvider
 
 
 class ExchangeDataProvider(BaseDataProvider):

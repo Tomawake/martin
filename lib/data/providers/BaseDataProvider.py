@@ -5,7 +5,7 @@ from typing import Tuple, List, Dict
 from datetime import datetime
 from abc import ABCMeta, abstractmethod
 
-from lib.data.providers.dates import ProviderDateFormat
+from martin.lib.data.providers.dates import ProviderDateFormat
 
 
 class BaseDataProvider(object, metaclass=ABCMeta):
