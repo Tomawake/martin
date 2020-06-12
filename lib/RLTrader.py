@@ -13,11 +13,11 @@ from stable_baselines.common.vec_env import DummyVecEnv, SubprocVecEnv
 from stable_baselines.common import set_global_seeds
 from stable_baselines import PPO2
 
-from lib.env.TradingEnv import TradingEnv
-from lib.env.reward import BaseRewardStrategy, IncrementalProfit, WeightedUnrealizedProfit
-from lib.data.providers.dates import ProviderDateFormat
-from lib.data.providers import BaseDataProvider,  StaticDataProvider, ExchangeDataProvider
-from lib.util.logger import init_logger
+from martin.lib.env.TradingEnv import TradingEnv
+from martin.lib.env.reward import BaseRewardStrategy, IncrementalProfit, WeightedUnrealizedProfit
+from martin.lib.data.providers.dates import ProviderDateFormat
+from martin.lib.data.providers import BaseDataProvider,  StaticDataProvider, ExchangeDataProvider
+from martin.lib.util.logger import init_logger
 
 
 def make_env(data_provider: BaseDataProvider, rank: int = 0, seed: int = 0):
