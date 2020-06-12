@@ -2,7 +2,7 @@ import pandas as pd
 
 from typing import List, Callable
 
-from lib.env.reward.BaseRewardStrategy import BaseRewardStrategy
+from martin.lib.env.reward.BaseRewardStrategy import BaseRewardStrategy
 
 class IncrementalProfit(BaseRewardStrategy):
     last_bought: int = 0

@@ -6,12 +6,12 @@ from gym import spaces
 from enum import Enum
 from typing import List, Dict
 
-from lib.env.render import TradingChart
-from lib.env.reward import BaseRewardStrategy, IncrementalProfit, WeightedUnrealizedProfit
-from lib.env.trade import BaseTradeStrategy, SimulatedTradeStrategy
-from lib.data.providers import BaseDataProvider
-from lib.data.features.transform import max_min_normalize, mean_normalize, log_and_difference, difference
-from lib.util.logger import init_logger
+from martin.lib.env.render import TradingChart
+from martin.lib.env.reward import BaseRewardStrategy, IncrementalProfit, WeightedUnrealizedProfit
+from martin.lib.env.trade import BaseTradeStrategy, SimulatedTradeStrategy
+from martin.lib.data.providers import BaseDataProvider
+from martin.lib.data.features.transform import max_min_normalize, mean_normalize, log_and_difference, difference
+from martin.lib.util.logger import init_logger
 
 
 class TradingEnvAction(Enum):

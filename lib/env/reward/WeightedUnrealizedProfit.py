@@ -4,7 +4,7 @@ import pandas as pd
 import numpy as np
 from typing import List, Callable
 
-from lib.env.reward.BaseRewardStrategy import BaseRewardStrategy
+from martin.lib.env.reward.BaseRewardStrategy import BaseRewardStrategy
 
 class WeightedUnrealizedProfit(BaseRewardStrategy):
     def __init__(self, **kwargs):
