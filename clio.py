@@ -4,13 +4,15 @@ from multiprocessing import Process
 
 from lib.cli.RLTraderCLI import RLTraderCLI
 from lib.util.logger import init_logger
-from lib.cli.functions import download_data_async
+from lib.cli.functions.update_data import download_data_async
 from lib.env.reward import BaseRewardStrategy, IncrementalProfit, WeightedUnrealizedProfit
 
 np.warnings.filterwarnings('ignore')
 
 trader_cli = RLTraderCLI()
 args = trader_cli.get_args()
+
+#print("args =", args)
 
 rewards = {"incremental-profit": IncrementalProfit, "weighted-unrealized-profit": WeightedUnrealizedProfit}
 reward_strategy = rewards[args.reward_strat]
@@ -27,6 +29,9 @@ if __name__ == '__main__':
     logger = init_logger(__name__, show_debug=args.debug)
 
     if args.command == 'optimize':
+    
+        print("args.command = optimize:", args)
+        '''
         n_processes = args.parallel_jobs
 
         processes = []
@@ -38,22 +43,31 @@ if __name__ == '__main__':
 
         for proc in processes:
             proc.join()
-
+        '''    
     from lib.RLTrader import RLTrader
 
-    trader = RLTrader(**vars(args), logger=logger, reward_strategy=reward_strategy)
-
+    #trader = RLTrader(**vars(args), logger=logger, reward_strategy=reward_strategy)
+    
+    #print("args step 2 =", args)
+    
     if args.command == 'train':
+        print("args.command = train:", args)
+        '''
         trader.train(n_epochs=args.epochs,
                      save_every=args.save_every,
                      test_trained_model=args.test_trained,
                      render_test_env=args.render_test,
                      render_report=args.render_report,
                      save_report=args.save_report)
+        '''             
     elif args.command == 'test':
+        print("args.command = test:", args)
+        '''
         trader.test(model_epoch=args.model_epoch,
                     render_env=args.render_env,
                     render_report=args.render_report,
                     save_report=args.save_report)
+        '''
     elif args.command == 'update-static-data':
-        download_data_async()
+        print("args.command = update-static-data:", args)
+        #download_data_async()
